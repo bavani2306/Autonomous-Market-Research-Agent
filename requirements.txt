@@ -1,0 +1,10 @@
+streamlit
+pandas
+scikit-learn
+nltk
+vaderSentiment
+beautifulsoup4
+requests
+transformers
+torch
+lxml_html_clean
