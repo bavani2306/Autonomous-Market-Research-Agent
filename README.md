@@ -105,3 +105,100 @@ NLP Processing
                         │
                         ▼
               Streamlit Dashboard
+```
+
+# 🧩 Core Components
+
+The project is divided into modular components, with each component responsible for a specific stage of the research pipeline.
+
+## 1. Research Input Layer
+
+Accepts the user's natural-language research question and controls the research configuration.
+
+**Current responsibility:**
+
+- Accept research topic/question
+- Configure number of articles
+- Trigger the research workflow
+
+---
+
+## 2. Web Research & Scraping Layer
+
+Implemented primarily through `tools/scraper.py`.
+
+**Responsibilities:**
+
+- Search Google News RSS
+- Collect article metadata
+- Resolve article URLs
+- Retrieve publisher pages
+- Extract article content
+- Fall back to RSS content when required
+- Report scraping diagnostics
+
+---
+
+## 3. NLP & Analytical Layer
+
+Implemented primarily through `tools/sentiment.py`.
+
+**Responsibilities:**
+
+- Text preprocessing
+- Sentiment analysis
+- Research relevance analysis
+- Keyword extraction
+- Entity extraction
+- Numeric claim extraction
+- Theme discovery
+- Domain/category detection
+
+---
+
+## 4. Research Synthesis Layer
+
+Implemented through `agents/writer.py`.
+
+**Responsibilities:**
+
+- Consume analytical outputs
+- Organize research signals
+- Structure evidence
+- Generate the initial research brief
+- Surface research limitations
+
+---
+
+## 5. Presentation & Visualization Layer
+
+Implemented through `app.py`.
+
+**Responsibilities:**
+
+- Streamlit interface
+- Research configuration
+- Workflow execution
+- Sentiment visualization
+- Domain/category visualization
+- Research brief presentation
+- Raw analytical data inspection
+
+---
+
+## 6. Future Agent Orchestration Layer
+
+This is part of the planned architecture rather than the complete current implementation.
+
+The intended architecture will eventually introduce specialized agents for:
+
+- Research planning
+- Source discovery
+- Evidence validation
+- Market analysis
+- Research synthesis
+- Guardrails and quality control
+
+This layer is intended to transform the current sequential analytical pipeline into a more autonomous multi-agent research workflow.
+
+
